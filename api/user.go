@@ -12,7 +12,7 @@ func UserRegister(c *gin.Context) {
 		res := userRegisterService.Register()
 		c.JSON(200, res)
 	} else {
-		c.JSON(400, ErrorResponse(err))
 		logging.Info(err)
+		c.JSON(400, ErrorResponse(err))
 	}
 }
